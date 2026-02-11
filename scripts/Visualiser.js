@@ -12,7 +12,7 @@ document.addEventListener('click', () => {
   }
 }, { once: true });
 audio.onloadedmetadata = (e) => {
-    audio.play();
+//    audio.play();
     audioCtx.resume();
     console.log(audioCtx.state === 'suspended');  
     const track = audioCtx.createMediaElementSource(audio); 
@@ -23,5 +23,5 @@ audio.onloadedmetadata = (e) => {
 
 function checkCon() {  
     //console.log(audioCtx.state); 
-    console.log(audioCtx.destination); 
+    $("#console").text(audioCtx.destination);  
 }
