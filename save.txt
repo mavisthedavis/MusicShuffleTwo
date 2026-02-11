@@ -1,0 +1,112 @@
+inputIndex = 0; 
+type = "";  
+audioList = [];  
+playing = false;   
+const input = document.getElementById('file'); 
+input.addEventListener('change', handleSubmit);   
+function handleSubmit(event) {  
+    
+    //var file = input.files;   
+    //const form = event.currentTarget;   
+    //console.log(form); 
+    for (let x = 0; x < input.files.length; x++) { 
+        audioList.push(new Audio(URL.createObjectURL(input.files[x])));   
+        audioList[inputIndex].controls = true;   
+        document.body.appendChild(audioList[inputIndex]);
+        inputIndex++;  
+    }  
+    audioList[i].addEventListener('onended', audioEnd());
+
+}  
+function audioEnd(event) {  
+    if (event) { 
+        console.log("test2"); 
+    }
+    audioList[i].removeEventListener('onended', audioEnd);
+    i++  
+    i = fixI(i);  
+    audioList[i].play(); 
+    audioList[i].addEventListener('onended', audioEnd);  
+        
+    
+    console.log("test"); 
+}
+function addAudio() { 
+    for (let x = 0; x < audioList.length; x++) {  
+        audioList[x].controls = true; 
+        document.body.appendChild(audioList[x]);     
+    } 
+}
+function run() {  
+    x = 0;
+    while(true) {  
+        if (x == 0) { 
+            console.log(audioList[x]);  
+        }
+        x++; 
+        if (x > audioList.length) { 
+            x = 0; 
+        }
+    }
+
+}
+//Basic audio controls, aka skip, back, and go to next song 
+//Also there is a function to fix the index of the list if it goes out of bounds. 
+function skipB() {  
+    audioList[i].pause();  
+    audioList[i].currentTime = 0;  
+    console.log(audioList[i].currentTime); 
+    i--;  
+    i = fixI(i);  
+    audioList[i].play(); 
+} 
+function skipF() { 
+    audioList[i].pause();  
+    audioList[i].currentTime = 0;  
+    i++; 
+    i = fixI(i);  
+    audioList[i].play();  
+}
+
+function playlist() {  
+    var finish = false;  
+    //playing 
+    if (playing == false) { 
+        playing = true; 
+        audioList[i].play(); 
+    } else if (playing == true) { 
+        playing = false;
+        audioList[i].pause();  
+    }  
+    var AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext;
+    audioList[i].onplay = function() {  
+        console.log("test"); 
+    }
+    //audioList[i].onended = function() {  
+    //    audioList[i].currentTime = 0; 
+    //    i++; 
+    //    i = fixI(i);  
+    //    audioList[i].play();  
+    //    console.log(i); 
+    //}  
+    
+}    
+document.onclick = function() {  
+//    for (let x = 0; x <= audioList.length; x++) { 
+//        if () 
+    
+}
+function fixI(i) { 
+    if (i < 0) { 
+        i = audioList.length - 1; 
+    } else if (i >= audioList.length) {  
+        i = 0;     
+    }  
+    //console.log(i); 
+    return i; 
+}
+function test() { 
+    console.log(i);  
+    console.log(audioList.length);  
+    console.log(audioList[i]); 
+}

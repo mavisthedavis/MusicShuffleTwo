@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Your Page Title</title>
+        <style> 
+            #play { 
+                height: 10vh; 
+                width: 10vw; 
+                background-color: blue; 
+            }  
+            #skipF { 
+                height: 10vh; 
+                width: 5vw; 
+                background-color: red; 
+            }  
+            #skipB { 
+                height: 10vh; 
+                width: 5vw; 
+                background-color: red; 
+            }  
+            #file-input { 
+                
+            } 
+            #interactive { 
+                height: 10vh; 
+                width: 5vw; 
+                background-color: green; 
+            } 
+        </style> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+
+    <body>    
+        <div id = "skipB"; onclick = "skipBack();"></div>
+        <div id = "play"; onclick = "playPause()"></div>  
+        <div id = "skipF"; onclick = "skipForward();"></div>  
+        <div id = "interactive"; onclick = "test()"></div>
+        <input type = "file"; name = "sound"; id ="file-input"; accept=".mp3"; multiple/>  
+        
+        <script src = "Scripts/InputCheck.js"></script>  
+        <script src = "Scripts/checkEnd.js"></script>  
+        <script src = "Scripts/nav.js"></script>
+
+    </body>
+</html>
