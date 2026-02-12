@@ -21,7 +21,9 @@ function handleSubmit(event) {
             index: inputIndex,
         };  
         audioList.push(audioObj);   
-        audioList[inputIndex].audio.prop('controls', true);;    
+        audioList[inputIndex].audio.prop('controls', true); 
+        audioList.audio[0].setAttribute('crossOrigin', "anonymous"); // need this
+
         //console.log(audioList[inputIndex].audio); 
         audioList[inputIndex].audio.on("play", checkPlay);  
         audioList[inputIndex].audio.on("pause", checkPause); 
