@@ -27,15 +27,15 @@ analyser.connect(audioCtx.destination);
 document.body.appendChild(audio);   
 audio.play();  
 play(); 
-function check() { 
+function check() {  
     analyser.getFloatFrequencyData(myDataArray);   
     for (let i = 0; i < myDataArray.length; i++) {  
-        $("mybtn").text(myDataArray[i]); 
+        $("#mybtn").css("width", (myDataArray[i] * -1) + "px"); 
         //console.log(myDataArray[i]); 
     }
     
 }   
  
 function play() {  
-    setInterval(check, 500);  
+    setInterval(check, 300);  
 }
