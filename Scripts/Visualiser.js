@@ -18,7 +18,6 @@ function check() {
         average += myDataArray[i];      
     } 
     average /= myDataArray.length;    
-    console.log(average); 
     //console.log(divList.length); 
     for (let i = 0; i < myDataArray.length; i++) {   
         if (audioList[playingIndex].audio[0].paused != true) {  
