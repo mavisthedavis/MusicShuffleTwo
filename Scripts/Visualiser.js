@@ -6,22 +6,7 @@ var divList = [];
 //audio.setAttribute('autoplay', true); // won't need this when the time comes 
 //audio.setAttribute('preload', "auto"); //or this 
 const analyser = audioCtx.createAnalyser();   
-var audioSourceNode;  
 var nodeList = [];  
-function initAnaly() {   
-    /*
-    audioSourceNode = audioCtx.createMediaElementSource(audioList[playingIndex].audio[0]);    
-    
-    analyser.fftSize = 2048;
-    const bufferLength = analyser.frequencyBinCount;
-    myDataArray = new Float32Array(bufferLength);
-    audioSourceNode.connect(analyser); 
-    analyser.connect(audioCtx.destination);    
-    //}   
-    //nodeList.push(audioSourceNode);  
-    */
-    
-}
 
 
 
@@ -45,7 +30,6 @@ function check() {
 function Aplaying() {  
     removeVis();  
     setUpVis();
-    initAnaly(); 
 }
 function setUpVis() {   
     for (let i = 0; i < myDataArray.length; i++) {  
