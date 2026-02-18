@@ -9,16 +9,17 @@ function playPause() {
     } 
 }  
 
-function checkPlay() {  
+function checkPlay() { 
     setIndex(this); 
-    playing = true; 
+    playing = true;  
+    Aplaying();  
 } 
 
 function checkPause() {  
     if (this.currentTime != 0) { 
         setIndex(this); 
         playing = false;    
-    }
+    }  
     
 }  
 function skipBack() { 
@@ -36,7 +37,6 @@ function checkIndex() {
     if (playingIndex > audioList.length - 1) {   
         return 0; 
     } else if (playingIndex < 0) {   
-        
         return audioList.length - 1; 
     }  
     return playingIndex; 
