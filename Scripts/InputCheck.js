@@ -28,7 +28,7 @@ function handleSubmit(event) {
         audioList[inputIndex].audio.on("pause", checkPause); 
 
         $("body").append(audioList[inputIndex].audio); 
-        audioSourceNode = audioCtx.createMediaElementSource(audioList[inputIndex].audio[0]);   
+        var audioSourceNode = audioCtx.createMediaElementSource(audioList[inputIndex].audio[0]);   
         analyser.fftSize = 2048;
         const bufferLength = analyser.frequencyBinCount;
         myDataArray = new Float32Array(bufferLength);
