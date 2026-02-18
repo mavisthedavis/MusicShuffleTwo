@@ -6,7 +6,6 @@ var filesAdded = false;
 const input = $('#file-input');  
 input.on('change', handleSubmit);   
 function handleSubmit(event) {   
-    filesAdded = true; 
     for (let x = 0; x < input.prop('files').length; x++) {   
         /*
         var audioObj = { 
@@ -29,9 +28,20 @@ function handleSubmit(event) {
         audioList[inputIndex].audio.on("pause", checkPause); 
 
         $("body").append(audioList[inputIndex].audio); 
+        audioSourceNode = audioCtx.createMediaElementSource(audioList[inputIndex].audio[0]);   
+        analyser.fftSize = 2048;
+        const bufferLength = analyser.frequencyBinCount;
+        myDataArray = new Float32Array(bufferLength);
+        audioSourceNode.connect(analyser); 
+        analyser.connect(audioCtx.destination);     
         inputIndex++; 
     }  
-    setInterval(checkEnd, 1);  
+     
+    if (!filesAdded) { 
+        setInterval(check, 100);  
+        setInterval(checkEnd, 1);  
+    } 
+    filesAdded = true; 
     //audioList[i].addEventListener('onended', audioEnd());
 
 }
