@@ -7,8 +7,9 @@ function setupAna() {
     audioCtx = new AudioContext(); 
     if (audioCtx.state === 'suspended') {
         audioCtx.resume().then(() => {
-        console.log("AudioContext resumed");
-    });
+            console.log("AudioContext resumed");
+        });  
+    }
     analyser = audioCtx.createAnalyser();     
     console.log(audioCtx.state); 
     wait = true; 
