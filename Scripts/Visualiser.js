@@ -27,9 +27,6 @@ function check() {
     
 }  
 function Aplaying() {   
-    if (wait) { 
-        setupAna(); 
-    }
     removeVis();  
     setUpVis();
 }
