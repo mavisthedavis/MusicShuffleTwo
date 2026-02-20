@@ -4,7 +4,8 @@ var divList = [];
 var audioCtx; 
 var analyser; 
 function setupAna() { 
-    audioCtx = new AudioContext(); 
+    audioCtx = new AudioContext();  
+    audioCtx.resume(); 
     analyser = audioCtx.createAnalyser();     
     console.log(audioCtx.state); 
     wait = true; 
