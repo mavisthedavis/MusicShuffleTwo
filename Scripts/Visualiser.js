@@ -1,10 +1,12 @@
 var wait = false;  
 var nodeList = []; 
 var divList = []; 
-
+var audioCtx; 
+var analyser; 
 function setupAna() { 
     audioCtx = new AudioContext(); 
-    analyser = audioCtx.createAnalyser();    
+    analyser = audioCtx.createAnalyser();     
+    console.log(audioCtx.running); 
     wait = true; 
 }
 
