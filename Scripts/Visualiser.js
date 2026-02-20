@@ -1,13 +1,12 @@
-const audioCtx = new AudioContext(); 
+var wait = false;  
+var nodeList = []; 
 var divList = []; 
-//var audio = new Audio("https://codehs.com/uploads/1ca205fa48224105f9196c2f16bbe828"); 
-//audio.setAttribute("controls", true); //don't need this
-//audio.setAttribute('crossOrigin', "anonymous"); // need this
-//audio.setAttribute('autoplay', true); // won't need this when the time comes 
-//audio.setAttribute('preload', "auto"); //or this 
-const analyser = audioCtx.createAnalyser();   
-var nodeList = [];  
 
+function setupAna() { 
+    audioCtx = new AudioContext(); 
+    analyser = audioCtx.createAnalyser();    
+    wait = true; 
+}
 
 
 
@@ -27,7 +26,10 @@ function check() {
     }
     
 }  
-function Aplaying() {  
+function Aplaying() {   
+    if (wait) { 
+        setupAna(); 
+    }
     removeVis();  
     setUpVis();
 }
