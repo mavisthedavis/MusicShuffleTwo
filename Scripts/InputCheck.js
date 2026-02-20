@@ -40,6 +40,11 @@ function handleSubmit(event) {
     if (!filesAdded) { 
         setInterval(check, 100);  
         setInterval(checkEnd, 1);  
+    }  
+    if (audioCtx.state === 'suspended') {
+        audioCtx.resume().then(() => {
+            console.log('AudioContext resumed successfully');
+        });
     } 
     filesAdded = true; 
     //audioList[i].addEventListener('onended', audioEnd());
