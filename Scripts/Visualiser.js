@@ -1,19 +1,9 @@
 var wait = false;  
 var nodeList = []; 
 var divList = []; 
-var audioCtx; 
-var analyser; 
-function setupAna() { 
-    audioCtx = new AudioContext(); 
-    if (audioCtx.state === 'suspended') {
-        audioCtx.resume().then(() => {
-            console.log("AudioContext resumed");
-        });  
-    }
-    analyser = audioCtx.createAnalyser();     
-    console.log(audioCtx.state); 
-    wait = true; 
-}
+const audioCtx = new AudioContext(); 
+analyser = audioCtx.createAnalyser();     
+
 
 
 
