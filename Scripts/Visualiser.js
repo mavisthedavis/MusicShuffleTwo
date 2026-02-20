@@ -6,7 +6,7 @@ var analyser;
 function setupAna() { 
     audioCtx = new AudioContext(); 
     analyser = audioCtx.createAnalyser();     
-    console.log(audioCtx.running); 
+    console.log(audioCtx.state); 
     wait = true; 
 }
 
