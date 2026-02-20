@@ -12,7 +12,10 @@ function handleSubmit(event) {
             audio: new Audio(URL.createObjectURL(input.prop('files')[x])),  
             index: inputIndex,
         };  
-        */   
+        */    
+        if (!wait) { 
+            setupAna(); 
+        }
         var audioElem = $("<audio></audio>"); 
         audioElem.attr("src", URL.createObjectURL(input.prop('files')[x]));
         var audioObj = { 
