@@ -1,5 +1,4 @@
 function playPause() {   
-    console.log("Check1"); 
     if (!playing) {   
         setIndex(null); 
         audioList[playingIndex].audio[0].play();    
@@ -8,7 +7,6 @@ function playPause() {
         audioList[playingIndex].audio[0].pause();   
         playing = false; 
     }  
-    console.log("Check2"); 
 }  
 
 function checkPlay() { 
