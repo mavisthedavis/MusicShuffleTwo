@@ -43,7 +43,7 @@ function handleSubmit(event) {
     }  
     if (audioCtx.state === 'suspended') {
         audioCtx.resume().then(() => {
-            console.log('AudioContext resumed successfully');
+            console.log("AudioCxt resumed");
         });
     } 
     filesAdded = true; 
