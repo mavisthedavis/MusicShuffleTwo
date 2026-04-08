@@ -6,10 +6,11 @@ input {
     display: none; 
 } 
 .audioElm div > h2 { 
-    width: 100%; 
+    width: 100%;   
     background-color: green; 
     text-align: center;  
-    margin-bottom: 2vh;
+    margin-bottom: 2vh; 
+    font-size: 120%;
 } 
 .audioElm button {  
     width: 7em; 
@@ -17,7 +18,8 @@ input {
     background-color: blue; 
     margin-left: 0.3em; 
 } 
-.audioElm > div { 
+.audioElm > div {   
+    overflow-wrap: break-word;
     width: 75%; 
     height: 80%; 
     background-color: yellow; 
@@ -31,10 +33,10 @@ input {
 } 
 .audioElm > div > div > div {  
     background-color: pink; 
-    width: 0.5em; 
-    height: 2em;  
-    position: absolute; 
-    top: -150%;
+    width: 4%; 
+    height: 400%;  
+    position: absolute;   
+    top: -140%;
 } 
 
 .btn { 
@@ -108,12 +110,12 @@ input {
     background-color: yellow;
 } 
 #main-line { 
-    width: 1em; 
-    height: 3em; 
+    width: 5%; 
+    height: 250%; 
     background-color: pink;  
     position: absolute; 
     left: 0; 
-    top: -100%; 
+    top: -75%; 
     
     
     
