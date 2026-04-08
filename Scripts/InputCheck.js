@@ -12,17 +12,16 @@ function handleSubmit(event) {
             audio: new Audio(URL.createObjectURL(input.prop('files')[x])),  
             index: inputIndex,
         };  
-        */    
-        var audioElem = $("<audio></audio>"); 
+        */   
+        var audioElem = $("<audio></audio>");  
         audioElem.attr("src", URL.createObjectURL(input.prop('files')[x]));
         var audioObj = { 
             audio: audioElem,  
             index: inputIndex,
         };  
         audioList.push(audioObj);   
-        audioList[inputIndex].audio.prop('controls', true); 
+        //audioList[inputIndex].audio.prop('controls', true); 
         audioList[inputIndex].audio[0].setAttribute('crossOrigin', "anonymous"); // need this
-
         //console.log(audioList[inputIndex].audio); 
         audioList[inputIndex].audio.on("play", checkPlay);  
         audioList[inputIndex].audio.on("pause", checkPause); 
@@ -33,20 +32,19 @@ function handleSubmit(event) {
         const bufferLength = analyser.frequencyBinCount;
         myDataArray = new Float32Array(bufferLength);
         audioSourceNode.connect(analyser); 
-        analyser.connect(audioCtx.destination);     
+        analyser.connect(audioCtx.destination); 
+        addAudioElm(input.prop('files')[x].name);  
         inputIndex++; 
     }  
      
     if (!filesAdded) { 
         setInterval(check, 100);  
-        setInterval(checkEnd, 1);  
-    }  
-    if (audioCtx.state === 'suspended') {
-        audioCtx.resume().then(() => {
-            console.log("AudioCxt resumed");
-        });
+        setInterval(checkEnd, 1);   
+        //startTime();  
+        filesAdded = true;  
     } 
-    filesAdded = true; 
+    
+    
     //audioList[i].addEventListener('onended', audioEnd());
 
 }
