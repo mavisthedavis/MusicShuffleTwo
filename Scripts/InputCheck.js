@@ -42,6 +42,14 @@ function handleSubmit(event) {
         setInterval(checkEnd, 1);   
         //startTime();  
         filesAdded = true;  
+    }  
+    if (audioCtx.state === 'suspended') {
+        audioCtx.resume().then(() => {
+            console.log("AudioCxt resumed");
+        });
+        setInterval(checkEnd, 1);   
+        //startTime();  
+        filesAdded = true;  
     } 
     
     
