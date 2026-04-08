@@ -1,0 +1,2 @@
+0.2.0 
+Creation of styles for the site, while also adding code for it to work sucessfully. 
