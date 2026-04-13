@@ -6,9 +6,10 @@ var isPressed = false;
 var element = null; 
 function linePressed() { 
     isPressed = true;   
-    element = this;  
+    element = this;   
+    // try dividing eml width by container width
     console.log($(element).css("width") + " Elm width"); 
-    console.log(FixCon($(element).css("width")) + (FixCon($(element).css("left"))/audioList[playingIndex].audio[0].duration) + " Time Ajust");  
+    console.log((FixCon($(element).css("width"))) + (FixCon($(element).css("left"))/audioList[playingIndex].audio[0].duration) + " Time Ajust");  
     console.log($(element).css("left") + " Element position"); 
     console.log(audioList[playingIndex].audio[0].currentTime + " current time of audio");
     //console.log(FixCon($(element).css("width")) / 2.7 * (FixCon($(element).css("left"))/audioList[playingIndex].audio[0].duration)); 
