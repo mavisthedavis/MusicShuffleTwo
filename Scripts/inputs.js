@@ -19,7 +19,7 @@ function linePressed() {
 function lineUnPressed() {   
     isPressed = false;  
     if (element == $("#main-line")[0]) {   
-        audioList[playingIndex].audio[0].currentTime = FixCon($(element).css("width")) / 5.2 * (FixCon($(element).css("left"))/audioList[playingIndex].audio[0].duration); 
+        audioList[playingIndex].audio[0].currentTime = 1; 
         //audioList[playingIndex].audio[0].currentTime = 5.87 * (FixCon($(element).css("left"))/audioList[playingIndex].audio[0].duration); 
     } else if (checkForElement()) {  
         for (let i = 0; i < audioList.length; i++) {  
