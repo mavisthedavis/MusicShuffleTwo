@@ -8,9 +8,9 @@ function linePressed() {
     isPressed = true;   
     element = this;  
     
-    console.log(audioList[playingIndex].audio[0].currentTime/FixCon($(element).css("left")));  
-    console.log(element); 
-    console.log(audioList[playingIndex].audio[0].currentTime);
+    console.log(audioList[playingIndex].audio[0].currentTime/FixCon($(element).css("left")) + "Time Ajust");  
+    console.log($(element).css("left") + "Element position"); 
+    console.log(audioList[playingIndex].audio[0].currentTime + "current time of audio");
     //console.log(FixCon($(element).css("width")) / 2.7 * (FixCon($(element).css("left"))/audioList[playingIndex].audio[0].duration)); 
     //console.log(audioList[playingIndex].audio[0].currentTime + "CT");
     
