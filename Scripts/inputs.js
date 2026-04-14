@@ -9,11 +9,13 @@ function linePressed() {
     element = this;    
     
     // try dividing eml width by container width
-    console.log($(element).css("width") + " Elm width"); 
+    //console.log($(element).css("width") + " Elm width"); 
     //console.log(((FixCon($("#time").css("width"))/FixCon($(element).css("width"))) + (FixCon($(element).css("left"))/audioList[playingIndex].audio[0].duration)) + " Time Ajust");   
-    console.log((audioList[playingIndex].audio[0].currentTime + (FixCon($(element).css("left"))/FixCon($("#time").css("width")))) + " Time Ajust"); 
+    //console.log((audioList[playingIndex].audio[0].currentTime + (FixCon($(element).css("left"))/FixCon($("#time").css("width")))) + " Time Ajust"); 
+    //console.log($(element).css("left") + " Element position"); 
+    //console.log(audioList[playingIndex].audio[0].currentTime + " current time of audio"); 
+    console.log(audioList[playingIndex].audio[0].currentTime + "CT"); 
     console.log($(element).css("left") + " Element position"); 
-    console.log(audioList[playingIndex].audio[0].currentTime + " current time of audio");
     //console.log(FixCon($(element).css("width")) / 2.7 * (FixCon($(element).css("left"))/audioList[playingIndex].audio[0].duration)); 
     //console.log(audioList[playingIndex].audio[0].currentTime + "CT");
     
@@ -22,7 +24,7 @@ function linePressed() {
 function lineUnPressed() {   
     isPressed = false;  
     if (element == $("#main-line")[0]) {   
-        audioList[playingIndex].audio[0].currentTime = audioList[playingIndex].audio[0].currentTime + (FixCon($(element).css("left"))/FixCon($("#time").css("width"))); 
+        audioList[playingIndex].audio[0].currentTime = 1; 
         //audioList[playingIndex].audio[0].currentTime = 5.87 * (FixCon($(element).css("left"))/audioList[playingIndex].audio[0].duration); 
     } else if (checkForElement()) {  
         for (let i = 0; i < audioList.length; i++) {  
